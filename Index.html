@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iron Ridge Rentals | Sacramento Tool Delivery</title>
 
+  <style>
+    :root {
+      --green-dark: #1f3b2c;
+      --green-mid: #315840;
+      --brown-light: #d8c3a5;
+      --brown-soft: #f3eadc;
+      --brown-dark: #8a6f4d;
+      --text-dark: #1d1d1d;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--brown-soft);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 28px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 70px 6%;
+      background: linear-gradient(90deg, var(--brown-light) 0%, var(--brown-soft) 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green-dark);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid var(--green-dark);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--green-dark);
+      margin-left: 12px;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 6px solid var(--green-dark);
+      padding: 35px;
+      box-shadow: 12px 12px 0 var(--brown-dark);
+    }
+
+    .hero-card h2 {
+      color: var(--green-dark);
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+      padding: 50px 6%;
+    }
+
+    aside {
+      background: var(--white);
+      padding: 25px;
+      border-left: 8px solid var(--green-dark);
+    }
+
+    aside h3 {
+      color: var(--green-dark);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    aside a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .content-section {
+      background: var(--white);
+      padding: 35px;
+    }
+
+    .content-section h2 {
+      font-size: 38px;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .equipment-card {
+      border: 2px solid var(--brown-light);
+      padding: 24px;
+      background: #fffdf8;
+    }
+
+    .equipment-card h3 {
+      color: var(--green-dark);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .equipment-card p {
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--brown-dark);
+      margin-bottom: 18px;
+    }
+
+    .delivery-strip {
+      margin: 50px 6%;
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .delivery-strip h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .delivery-strip p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 24px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .layout,
+      .delivery-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .equipment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .button.secondary {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">IRON RIDGE RENTALS</div>
+    <nav>
+      <a href="#equipment">Equipment</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#service-area">Service Area</a>
+      <a href="#rent">Rent Now</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Rent. Load. Work.</h1>
+      <p>
+        Iron Ridge Rentals provides convenient tool and equipment rentals delivered
+        directly to customers throughout the greater Sacramento, California area.
+        Skip the store, skip the loading dock, and get the tools you need brought
+        straight to your door.
+      </p>
+
+      <a class="button" href="#rent">Start Rental Request</a>
+      <a class="button secondary" href="#equipment">View Equipment</a>
+    </div>
+
+    <div class="hero-card">
+      <h2>Built for Weekend Projects</h2>
+      <ul>
+        <li>Tool rentals delivered to you</li>
+        <li>Simple online rental request</li>
+        <li>Pickup and return options available</li>
+        <li>Serving greater Sacramento</li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="layout">
+    <aside>
+      <h3>Rental Categories</h3>
+      <a href="#">Carpet Cleaners</a>
+      <a href="#">Pressure Washers</a>
+      <a href="#">Lawn & Garden</a>
+      <a href="#">Concrete Tools</a>
+      <a href="#">Moving Equipment</a>
+      <a href="#">Specialty Tools</a>
+    </aside>
+
+    <section class="content-section" id="equipment">
+      <h2>Featured Rentals</h2>
+      <p>
+        Our inventory is focused on practical, high-demand tools that homeowners,
+        contractors, landlords, and weekend project warriors need without the hassle
+        of buying, storing, and maintaining expensive equipment.
+      </p>
+
+      <div class="equipment-grid">
+        <div class="equipment-card">
+          <h3>Carpet Cleaner</h3>
+          <p>Deep-clean carpets, rental units, offices, and move-out properties.</p>
+          <div class="price">From $40/day</div>
+          <a class="button" href="#rent">Request</a>
+        </div>
+
+        <div class="equipment-card">
+          <h3>Pressure Washer</h3>
+          <p>Clean driveways, patios, siding, fences, and outdoor surfaces.</p>
+          <div class="price">Coming Soon</div>
+          <a class="button" href="#rent">Request</a>
+        </div>
+
+        <div class="equipment-card">
+          <h3>Plate Compactor</h3>
+          <p>Compact soil, gravel, pavers, walkways, and small hardscape projects.</p>
+          <div class="price">Coming Soon</div>
+          <a class="button" href="#rent">Request</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="delivery-strip" id="delivery">
+    <div>
+      <h2>Delivered Directly To You</h2>
+      <p>
+        Located in the greater Sacramento area? Submit a rental request, select your
+        equipment, and choose whether you need pickup, delivery, or both.
+      </p>
+    </div>
+    <a class="button secondary" href="#rent">Check Availability</a>
+  </section>
+
+  <main class="layout">
+    <aside id="service-area">
+      <h3>Service Area</h3>
+      <a href="#">Sacramento</a>
+      <a href="#">Elk Grove</a>
+      <a href="#">Citrus Heights</a>
+      <a href="#">Rancho Cordova</a>
+      <a href="#">Roseville</a>
+      <a href="#">Folsom</a>
+    </aside>
+
+    <section class="content-section" id="rent">
+      <h2>Start Your Rental</h2>
+      <p>
+        Rental requests are reviewed for availability, delivery area, and scheduling.
+        Once confirmed, customers receive payment instructions and rental details.
+      </p>
+
+      <br />
+
+      <a class="button" href="#">Rental Request Form</a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Iron Ridge Rentals. Serving greater Sacramento, California.
+  </footer>
+
+</body>
+</html>
