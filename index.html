@@ -35,10 +35,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
       letter-spacing: 1px;
     }
@@ -46,32 +47,41 @@
     nav a {
       color: var(--white);
       text-decoration: none;
-      margin-left: 28px;
+      margin-left: 24px;
       font-weight: bold;
       font-size: 15px;
     }
 
     .hero {
+      background: linear-gradient(90deg, var(--brown-light), var(--brown-soft));
       padding: 70px 6%;
-      background: linear-gradient(90deg, var(--brown-light) 0%, var(--brown-soft) 100%);
+    }
+
+    .hero-inner,
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
       align-items: center;
     }
 
     .hero h1 {
-      font-size: 58px;
-      line-height: 1;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.95;
       color: var(--green-dark);
       text-transform: uppercase;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .hero p {
       font-size: 20px;
       line-height: 1.6;
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 30px;
     }
 
@@ -80,80 +90,59 @@
       background: var(--green-dark);
       color: var(--white);
       text-decoration: none;
-      padding: 16px 28px;
+      padding: 15px 24px;
       font-weight: bold;
       text-transform: uppercase;
       border: 2px solid var(--green-dark);
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
 
     .button.secondary {
       background: transparent;
       color: var(--green-dark);
-      margin-left: 12px;
     }
 
     .hero-card {
       background: var(--white);
-      border: 6px solid var(--green-dark);
-      padding: 35px;
-      box-shadow: 12px 12px 0 var(--brown-dark);
+      border: 5px solid var(--green-dark);
+      padding: 32px;
+      box-shadow: 10px 10px 0 var(--brown-dark);
     }
 
     .hero-card h2 {
       color: var(--green-dark);
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .hero-card ul {
-      list-style: none;
+      font-size: 30px;
+      margin-bottom: 18px;
     }
 
     .hero-card li {
+      list-style: none;
       padding: 12px 0;
       border-bottom: 1px solid #ddd;
       font-size: 18px;
       font-weight: bold;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 30px;
-      padding: 50px 6%;
+    section {
+      padding: 55px 6%;
     }
 
-    aside {
+    .content-box {
       background: var(--white);
-      padding: 25px;
-      border-left: 8px solid var(--green-dark);
+      padding: 38px;
     }
 
-    aside h3 {
-      color: var(--green-dark);
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-
-    aside a {
-      display: block;
-      padding: 12px 0;
-      color: var(--text-dark);
-      text-decoration: none;
-      border-bottom: 1px solid #ddd;
-      font-weight: bold;
-    }
-
-    .content-section {
-      background: var(--white);
-      padding: 35px;
-    }
-
-    .content-section h2 {
+    .content-box h2 {
       font-size: 38px;
       color: var(--green-dark);
-      margin-bottom: 20px;
       text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .content-box p {
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     .equipment-grid {
@@ -165,8 +154,8 @@
 
     .equipment-card {
       border: 2px solid var(--brown-light);
-      padding: 24px;
       background: #fffdf8;
+      padding: 24px;
     }
 
     .equipment-card h3 {
@@ -176,7 +165,6 @@
     }
 
     .equipment-card p {
-      line-height: 1.5;
       margin-bottom: 18px;
     }
 
@@ -188,12 +176,11 @@
     }
 
     .delivery-strip {
-      margin: 50px 6%;
       background: var(--green-dark);
       color: var(--white);
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1fr auto;
+      padding: 45px;
+      display: flex;
+      justify-content: space-between;
       gap: 30px;
       align-items: center;
     }
@@ -203,9 +190,23 @@
       margin-bottom: 10px;
     }
 
-    .delivery-strip p {
-      font-size: 18px;
-      line-height: 1.5;
+    .delivery-strip .button.secondary {
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .service-grid div {
+      background: var(--brown-soft);
+      border-left: 6px solid var(--green-dark);
+      padding: 16px;
+      font-weight: bold;
     }
 
     footer {
@@ -213,31 +214,60 @@
       color: var(--white);
       text-align: center;
       padding: 24px;
-      margin-top: 50px;
     }
 
-    @media (max-width: 900px) {
-      .hero,
-      .layout,
-      .delivery-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .equipment-grid {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 950px) {
       nav {
         display: none;
       }
 
-      .hero h1 {
-        font-size: 42px;
+      .hero-inner {
+        grid-template-columns: 1fr;
       }
 
-      .button.secondary {
-        margin-left: 0;
-        margin-top: 12px;
+      .equipment-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .delivery-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 16px 5%;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero,
+      section {
+        padding: 42px 5%;
+      }
+
+      .hero-card,
+      .content-box,
+      .delivery-strip {
+        padding: 26px;
+      }
+
+      .equipment-grid,
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
       }
     }
   </style>
@@ -256,36 +286,36 @@
   </header>
 
   <section class="hero">
-    <div>
-      <h1>Same Day Delivery Available</h1>
-      <p>
-        Iron Ridge Rentals provides convenient tool and equipment rentals delivered
-        directly to customers throughout the greater Sacramento, California area.
-        Skip the store, skip the line, and get the tools you need brought
-        straight to your door.
-      </p>
+    <div class="hero-inner">
+      <div>
+        <h1>Same Day Delivery Available</h1>
+        <p>
+          Iron Ridge Rentals provides convenient tool and equipment rentals delivered directly
+          to customers throughout the greater Sacramento, California area.
+        </p>
+        <a class="button" href="#rent">Start Rental Request</a>
+        <a class="button secondary" href="#equipment">View Equipment</a>
+      </div>
 
-      <a class="button" href="#rent">Start Rental Request</a>
-      <a class="button secondary" href="#equipment">View Equipment</a>
+      <div class="hero-card">
+        <h2>Rent Tools Without the Store Run</h2>
+        <ul>
+          <li>Tool rentals delivered to you</li>
+          <li>Serving greater Sacramento</li>
+          <li>Simple daily rental pricing</li>
+          <li>Pickup and delivery options</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-  <main class="layout">
-    <aside>
-      <h3>Rental Categories</h3>
-      <a href="#">Carpet Cleaners</a>
-      <a href="#">Pressure Washers</a>
-      <a href="#">Lawn & Garden</a>
-      <a href="#">Concrete Tools</a>
-      <a href="#">Moving Equipment</a>
-      <a href="#">Specialty Tools</a>
-    </aside>
-
-    <section class="content-section" id="equipment">
+  <section id="equipment">
+    <div class="section-inner content-box">
       <h2>Featured Rentals</h2>
       <p>
         Our inventory is focused on practical, high-demand tools that homeowners,
-        contractors, landlords, and weekend project warriors need without the hassle
-        of buying, storing, and maintaining expensive equipment.
+        contractors, landlords, and weekend project warriors need without buying,
+        storing, or maintaining expensive equipment.
       </p>
 
       <div class="equipment-grid">
@@ -310,43 +340,49 @@
           <a class="button" href="#rent">Request</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <section class="delivery-strip" id="delivery">
-    <div>
-      <h2>Delivered Directly To You</h2>
-      <p>
-        Located in the greater Sacramento area? Submit a rental request, select your
-        equipment, and choose whether you need pickup, delivery, or both.
-      </p>
     </div>
-    <a class="button secondary" href="#rent">Check Availability</a>
   </section>
 
-  <main class="layout">
-    <aside id="service-area">
-      <h3>Service Area</h3>
-      <a href="#">Sacramento</a>
-      <a href="#">Elk Grove</a>
-      <a href="#">Citrus Heights</a>
-      <a href="#">Rancho Cordova</a>
-      <a href="#">Roseville</a>
-      <a href="#">Folsom</a>
-    </aside>
+  <section id="delivery">
+    <div class="section-inner delivery-strip">
+      <div>
+        <h2>Delivered Directly To You</h2>
+        <p>
+          Located in the greater Sacramento area? Submit a rental request, select your
+          equipment, and choose whether you need pickup, delivery, or both.
+        </p>
+      </div>
+      <a class="button secondary" href="#rent">Check Availability</a>
+    </div>
+  </section>
 
-    <section class="content-section" id="rent">
+  <section id="service-area">
+    <div class="section-inner content-box">
+      <h2>Service Area</h2>
+      <p>Iron Ridge Rentals serves customers throughout the greater Sacramento region.</p>
+
+      <div class="service-grid">
+        <div>Sacramento</div>
+        <div>Elk Grove</div>
+        <div>Citrus Heights</div>
+        <div>Rancho Cordova</div>
+        <div>Roseville</div>
+        <div>Folsom</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rent">
+    <div class="section-inner content-box">
       <h2>Start Your Rental</h2>
       <p>
         Rental requests are reviewed for availability, delivery area, and scheduling.
         Once confirmed, customers receive payment instructions and rental details.
       </p>
-
       <br />
-
       <a class="button" href="#">Rental Request Form</a>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
     © 2026 Iron Ridge Rentals. Serving greater Sacramento, California.
